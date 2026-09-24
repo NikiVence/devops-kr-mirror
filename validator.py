@@ -15,3 +15,8 @@ def validate_email(email: str) -> bool:
 
 
 __all__ = ["validate_email", "validate_phone"]
+
+
+def validate_inn(inn: str) -> bool:
+    """TODO: валидация ИНН."""
+    pass
