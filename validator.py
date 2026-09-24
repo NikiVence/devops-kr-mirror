@@ -1,5 +1,5 @@
 def validate_phone(phone: str) -> bool:
-    """Валидация расийского номера телефона."""
+    """Валидация российского номера телефона."""
     import re
 
     cleaned = phone.replace('-', '').replace(' ', '')
