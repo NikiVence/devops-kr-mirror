@@ -1,3 +1,9 @@
+CONFLICT (modify/delete): test/test_validator.py deleted in HEAD and modified in upstream/feature/instructor-change.  Version upstream/feature/instructor-change of test/test_validator.py left in tree.
+Auto-merging validator.py
+CONFLICT (content): Merge conflict in validator.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+<<<<<<< HEAD
 def validate_phone(phone: str) -> bool:
     """Валидация российского номера телефона."""
     import re
@@ -6,6 +12,16 @@ def validate_phone(phone: str) -> bool:
     return bool(re.fullmatch(r'\+?7[0-9]{10}', cleaned))
 
 
+# validator.py
+def validate_email(email: str) -> bool:
+    """Валидация email-адреса."""
+    import re
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return bool(re.match(pattern, email))
+
+
+__all__ = ["validate_email", "validate_phone"]
+=======
 # validator.py
 def validate_email(email: str) -> bool:
     """Валидация email-адреса."""
@@ -45,6 +61,4 @@ def validate_snils(snils: str) -> bool:
         expected = calculated % 101
     
     return expected == check_sum
-
-
-__all__ = ["validate_email", "validate_phone", "validate_snils"]
+>>>>>>> upstream/feature/instructor-change
